@@ -131,11 +131,13 @@ It can instructions that will describe the elements of the page (That will be pa
 It can also contains instructions to define the style (color, ...) of those element using the CSS (Cascading Style Sheets) language 
 
 HTML element are defined by markup using a syntax based on '<>' and '</>'
+````
  - '<h1>' is the opening of a title element
  - '</h1>' is the closing of that title element
  - '<h1>React!</h1>' we'll create a Title element with the text 'React!'
  - '<h1 style="color:red;">React!</h1>' we'll create a Title element with the text 'React!' with a Red color
    - This is inline styling of the element, where style properties are directly declared inside the element opening
+````   
 
 ## Javascript
 https://www.w3schools.com/js/default.asp
