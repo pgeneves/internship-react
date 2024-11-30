@@ -8,8 +8,8 @@
 # testing
 /coverage
 
-# production
-/build
+# In production branch, the static website is published to teh GIT repo to be served as a Github page
+# /build 
 
 # misc
 .DS_Store
