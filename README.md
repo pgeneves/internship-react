@@ -67,7 +67,7 @@ Let's try to add some text in the generated web page.
  - Modify the App function in the App.js file
    - Add some text inside the <div > element (It means somewhere between the <div> and </div> markups)
    - Caution: Inline styling are declared in a special way in the react syntax
-      -  <h1 style={{color: "red"}}>React!</h1> will be the way to create a title with a Red style
+       -  ````<h1 style={{color: "red"}}>React!</h1> will be the way to create a title with a Red style````
 
 ## Understanding react components
 The major strenght of React is to ease re-use of code. This property can be named 'Composition'.
@@ -83,6 +83,52 @@ Let's try to also introduce a component in the 'react-project' application.
  - Copy the TextOutput component in the 'react-project' application by copying the javascript file from  the 'examples'
  - Modify the App.js in 'react-project' by looking at App.js of 'examples'
    - Add the TextOutput component 3 times, with different texts
+
+## Understanding variable, function and state
+A variable is a part if the memory reserved by the code to store value while the code is executing.
+A variable have to be declared (e.g. "var myVariable")
+An initial value can be assigned during the declaration (e.g. "var myVariable = 'myValue'")
+The value of a variable can be accessed by using the variable name
+The value of a variable can be changed by the code (e.g. "myVariable = 'myNewValue'")
+
+A function is a piece of code that can be defined one time and reused by other part of the code.
+Classical function are defined with name and can receive parameters
+
+````javascript
+// A simple function
+function simpleFunction() {
+  console.log("in the function");
+}
+
+/**
+ * A  function that can be called with some parameters
+ * In the example below, the passed parameters are assigned to a variable named 'params'
+ */
+function functionWithParameters(params) {
+  console.log("in the param function: "+params);
+}
+
+/**
+ * A  function that can return a value
+ */
+function functionWithParametersAndReturn(params) {
+  return "Changed"+params;
+}
+
+// A function can also call another function
+function chainFunction() {
+  // console.log() is itself a function provided out of the box
+  console.log(functionWithParametersAndReturn("original_text"));
+}
+````
+
+Another strenght of react is to continuously adapt the UI to the state of its component.
+
+State is a special type of variable managed by React.
+To declare this variable, the special function 'useState' provided by React have to be used, like in TextOutput.js
+To update this variable, to assign a new value to it, the function returned by 'useState' must be used 
+
+It will be illustrated in following sections
 
 ## Use components made by the community
 Lot's of component have been created by the community and can be re-used instead of starting from scratch on each new project.
@@ -114,6 +160,10 @@ Let's try to use a pre-defined component from MaterialUI in 'react-project'
    
 TIPS: When using a component look at its documentation in MUI; The first code example are usually the simpler to start.
 To find out the import, the easiest is to look at the live example at the beginning of their documentation and use the 'show code' button.
+
+A special type of MUI components are useful to layout the page.
+In that project the recommendation is to experiments with Grid layout (https://mui.com/material-ui/react-grid2/)
+'react-grid2' is recommended as grid is deprecated, meaning it will not longuer be maintained by the community and will disappear at some point.
 
 ## Start to code the project!
 A separate file named internship.md is describing the goal of the project, its requirements and provide technical information to complete it. With all knowledge gained so far let's implements this real-life project.
