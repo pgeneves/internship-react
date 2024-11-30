@@ -6,7 +6,6 @@ It is named React.js and the company is using it for all user interfaces.
 
 While the project will be created from scratch, code examples are available in the 'examples' application already present
 
-
 # Visual studio code
  - Main tool to edit code for this project
  - Open project folder using the proper menu entry in the File menu
@@ -208,8 +207,6 @@ https://www.w3schools.com/react/default.asp
 
  - React is a Javascript library mainly used for for building web user interfaces as single-page applications
  - A single-page application differs from a standard web-site as most of what happens in the UI is controlled by Javascript code. Standard web-site and on the reverse made of html pages and use hyperlink to navigate across pages.
-
-
 
 # Documentation
 - https://www.w3schools.com/
