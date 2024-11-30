@@ -164,6 +164,14 @@ A special type of MUI components are useful to layout the page.
 In that project the recommendation is to experiments with Grid layout (https://mui.com/material-ui/react-grid2/)
 'react-grid2' is recommended as grid is deprecated, meaning it will not longuer be maintained by the community and will disappear at some point.
 
+## Use developper tools to resolve bugs
+Chrome and Firefox browser have powerful development tools available.
+In Firefox CTRL+SHIFT+I can be used to open it (and F11 on Chrome)
+
+The 'Console' tab allow to see eroor message as well as message produce by the code with cal to the 'console.log(...)' function
+The 'Debug' tab allow to see variables, put breakpoint to stop code execution, and execute step by step
+'Spy expression' are very powerful to keep track of values of some variables across the execution
+
 ## Start to code the project!
 A separate file named internship.md is describing the goal of the project, its requirements and provide technical information to complete it. With all knowledge gained so far let's implements this real-life project.
 
@@ -211,5 +219,4 @@ https://www.w3schools.com/react/default.asp
 # Documentation
 - https://www.w3schools.com/
     - Main resource to learn all aspect of Web development and beyond
-
 
