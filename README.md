@@ -61,7 +61,7 @@ A lot of files have been created and only the main ones are described here as an
    - The function return HTML content using a special React syntax
       - HTML instruction can be mixed with react instructions that allow to adapt the generated HTML using the code logic
 
-## First modification of the generated code
+## First modification of the generated code X
 Let's try to add some text in the generated web page.
  - Modify the App function in the App.js file
    - Add some text inside the <div > element (It means somewhere between the <div> and </div> markups)
@@ -95,9 +95,7 @@ Classical function are defined with name and can receive parameters
 
 ````javascript
 // A simple function
-function simpleFunction() {
-  console.log("in the function");
-}
+function simpleFunction() {console.log("in the function");}
 
 /**
  * A  function that can be called with some parameters
@@ -153,7 +151,7 @@ Let's try to use a pre-defined component from MaterialUI in 'react-project'
  - Copy the TestMUI component in the 'react-project' application by copying the javascript file from  the 'examples'
  - Modify the App.js in 'react-project' by looking at App.js of 'examples'
  - Look at the documentation in the MUI website
-   - The Slider component used above is documented here https://mui.com/material-ui/react-slider/
+   - The Slider component used above is documented here https://mui.com/material-ui/react-slider/ 
  - Select another simple component and use it in TestMUI
    - A 'Chip' is a very simple component to try; Select and Rating are also easy to try
    
@@ -166,9 +164,9 @@ In that project the recommendation is to experiments with Grid layout (https://m
 
 ## Use developper tools to resolve bugs
 Chrome and Firefox browser have powerful development tools available.
-In Firefox CTRL+SHIFT+I can be used to open it (and F11 on Chrome)
+In Firefox CTRL+SHIFT+I can be used to open it (and F11 on Chrome(non))
 
-The 'Console' tab allow to see eroor message as well as message produce by the code with cal to the 'console.log(...)' function
+The 'Console' tab allow to see error message as well as message produce by the code with cal to the 'console.log(...)' function
 The 'Debug' tab allow to see variables, put breakpoint to stop code execution, and execute step by step
 'Spy expression' are very powerful to keep track of values of some variables across the execution
 
