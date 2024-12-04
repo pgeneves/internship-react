@@ -7,110 +7,99 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-
-// This is importing code already existing; Here a function in React library named 'useState'
 import { useState } from "react";
 
 export default App
 
+
 function App() {
 
-  var [sourceText, setSourceText] = useState("write in here")
-  var [valeur, setValeur] = useState("copy.txt.from.textbox.n°1->");
+   var [sourceText, setSourceText] = useState("write in here")
+   var [valeur, setValeur] = useState("copy.txt.from.textbox.n°1->");
+   var [error, seterror] = useState("null");
 
   const handleChange = (event) => { setSourceText(event.target.value);
   };
 
   return (
-    <div className="App">
-      <Grid container spacing={2}>
-        <Grid size={8}>
-
-        </Grid>
 
 
-        <Grid size={12}>
+      <Grid container spacing={0}>
 
-            <TextField
-              hiddenLabel
-              id="button-1"
-              value={sourceText}
-              variant="outlined"
-              size="medium"
-              onChange={handleChange}
-            />
+      <Grid size={12}>
 
-          <Button
-            variant="contained" color="success" onClick={() => {
-              console.log({sourceText});
-              setSourceText(":");
-            }}>
-          reset
-          </Button>
+        <TextOutput text="projet react" />
 
-          
-            <TextField
-              hiddenLabel
-              id="button-3"
-              value={valeur}
-              variant="outlined"
-              size="medium"
-              
-            />
-            <Button
-              onClick={() => {
-                ;
-              }}
-            >
-              <Button
-            variant="contained" color="success" onClick={() => {
-              console.log({valeur});
-              setValeur(sourceText);
-            }}>
-            Copy to textbox n°2
-          </Button>
-
-          </Button>
-
-        </Grid>
-
-        <Grid size={6}>
-
-          <TextOutput text="'seconds-counter'" />
-
-        </Grid>
+      </Grid>
 
 
-        <Grid size={6}>
+      <Grid size={12}>
 
-          <TextOutput text="React Internship Project" />
-        </Grid>
+         <Button
+             variant="contained" color="success" onClick={() => {
+               console.log({sourceText});
+               setSourceText(":");
+             }}>
+               reset
+           </Button>
+
+             <TextField
+               hiddenLabel
+               id="button-1"
+               value={sourceText}
+               variant="outlined"
+               multiline
+               rows={10}
+               fullWidth
+               size="medium"
+               onChange={handleChange}
+             />
+
+           <Button
+             variant="contained" color="success" onClick={() => {
+               console.log({valeur});
+               setValeur(sourceText);
+             }}>
+               Copy to textbox n°2
+           </Button>
+
+
+             <TextField
+               hiddenLabel
+               id="button-3"
+               value={valeur}
+               variant="outlined"
+               multiline
+               rows={10}
+               fullWidth
+               size="medium"
+
+             />
+
+      </Grid>
+
+             <TextField
+               hiddenLabel
+               id="button-1"
+               value={error}
+               variant="outlined"
+               multiline
+               rows={10}
+               fullWidth
+               size="medium"
+
+         />
+
+
+      <Grid size={6}>
+
 
 
       </Grid>
 
 
+      </Grid>
 
-      <header className="App-header">
 
-        <TextOutput text="'seconds-counter'" />
-
-        <TextOutput text="React Internship Project" />
-
-        <TextOutput text="React Internship Project" />
-
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
   );
   }
