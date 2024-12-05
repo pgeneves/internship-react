@@ -8,17 +8,47 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { useState } from "react";
-
-export default App;
+import { format } from "sql-formatter";
 
 function App() {
   var [sourceText, setSourceText] = useState("write in here");
   var [valeur, setValeur] = useState("copy.txt.from.textbox.n°1->");
   var [error, seterror] = useState("null");
 
-  const handleChange = (event) => {
+  function transform(paramsToto) {
+    var sqlQuery = "SELECT * FROM, sourceText";
+    //console.log(format(sqlQuery, { language: "mysql" })); // on appelle format en lui passant sqlQuery
+    try {
+      var newQuery = format(paramsToto, { language: "mysql" }); // appelle format en lui passant paramsToto
+      return newQuery;
+    } catch (e) {
+      seterror(e);
+    }
+
+    return "";
+  }
+
+  /*
+  function greet(originalValue, setErrorMessage) {
+    if (originalValue.length < 5) {
+      setErrorMessage("Input must be at least five characters long");
+      return false;
+    } else {
+      setErrorMessage("");
+      return true;
+    }
+}*/
+
+  const handleChange1 = (event) => {
     setSourceText(event.target.value);
   };
+
+  /*  
+  const handleChange2 = (event) => {
+    const value = event.target.value;
+    setInputValue(value);
+    greet(inputValue, setErrorMessage);
+  };*/
 
   return (
     <Grid container spacing={0}>
@@ -47,7 +77,7 @@ function App() {
           rows={10}
           fullWidth
           size="medium"
-          onChange={handleChange}
+          onChange={handleChange1}
         />
 
         <Button
@@ -55,7 +85,7 @@ function App() {
           color="success"
           onClick={() => {
             console.log({ valeur });
-            setValeur(sourceText);
+            setValeur(transform(sourceText));
           }}
         >
           Copy to textbox n°2
@@ -72,7 +102,6 @@ function App() {
           size="medium"
         />
       </Grid>
-
       <TextField
         hiddenLabel
         id="button-1"
@@ -82,9 +111,11 @@ function App() {
         rows={10}
         fullWidth
         size="medium"
+        /*    onChange={handleChange2}
+        error={Boolean(errorMessage)}
+        helperText={errorMessage}*/
       />
-
-      <Grid size={6}></Grid>
     </Grid>
   );
 }
+export default App;
