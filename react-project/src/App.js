@@ -1,25 +1,21 @@
 import TextOutput from "./components/TextOutput.js";
-import TestMUI from "./components/TestMUI.js";
-import logo from "./logo.svg";
 import Grid from "@mui/material/Grid2";
 import "./App.css";
-import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
-import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { useState } from "react";
 import { format } from "sql-formatter";
 
 function App() {
-  var [sourceText, setSourceText] = useState("write in here");
+  var [sourceText, setSourceText] = useState(
+    "select * from table where cond = true"
+  );
   var [valeur, setValeur] = useState("copy.txt.from.textbox.n°1->");
-  var [error, seterror] = useState("null");
+  var [error, seterror] = useState("");
 
-  function transform(paramsToto) {
-    var sqlQuery = "SELECT * FROM, sourceText";
-    //console.log(format(sqlQuery, { language: "mysql" })); // on appelle format en lui passant sqlQuery
+  function transform(params) {
     try {
-      var newQuery = format(paramsToto, { language: "mysql" }); // appelle format en lui passant paramsToto
+      var newQuery = format(params, { language: "mysql" }); // appelle format en lui passant paramsToto
       return newQuery;
     } catch (e) {
       seterror(e);
@@ -28,27 +24,9 @@ function App() {
     return "";
   }
 
-  /*
-  function greet(originalValue, setErrorMessage) {
-    if (originalValue.length < 5) {
-      setErrorMessage("Input must be at least five characters long");
-      return false;
-    } else {
-      setErrorMessage("");
-      return true;
-    }
-}*/
-
   const handleChange1 = (event) => {
     setSourceText(event.target.value);
   };
-
-  /*  
-  const handleChange2 = (event) => {
-    const value = event.target.value;
-    setInputValue(value);
-    greet(inputValue, setErrorMessage);
-  };*/
 
   return (
     <Grid container spacing={0}>
@@ -111,9 +89,7 @@ function App() {
         rows={10}
         fullWidth
         size="medium"
-        /*    onChange={handleChange2}
-        error={Boolean(errorMessage)}
-        helperText={errorMessage}*/
+        color="error"
       />
     </Grid>
   );
